@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>amazonリンクの短縮（節目1）</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+
+  <body class="bg-gray-100 p-4">
+    <header class="bg-white text-gray-800 p-4 text-left mb-4">
+      <h1 class="text-2xl">Amazonリンク短縮ツール</h1>
+      <p>
+        amazon商品の<span class="text-xl">長すぎるリンク</span>を<span
+          class="text-xl"
+          >短縮</span
+        >します（ペースト → 短縮ボタンで実行）
+      </p>
+    </header>
+
+    <div
+      class="bg-white p-6 rounded-md shadow-md flex flex-wrap md:flex-nowrap"
+    >
+      <div class="flex-none w-full md:w-2/3 mb-4 md:mb-0">
+        <img
+          src="{{ url_for('static', filename='images/top.jpg') }}"
+          alt="画像"
+          class="w-full h-auto"
+        />
+      </div>
+
+      <div class="flex-1 flex flex-col justify-between w-full md:w-1/3 md:pl-4">
+        <form
+          id="linkForm"
+          action="/"
+          method="post"
+          class="flex flex-col justify-between h-full"
+        >
+          <div>
+            <textarea
+              name="amazon_link"
+              id="amazon_link"
+              class="w-full border rounded-md border-gray-300 p-2 mb-2 h-36 md:h-48 text-black"
+              placeholder="短縮したいamazonリンクを入力..."
+              required
+              oninvalid="this.setCustomValidity('amazonリンクを入力してください')"
+              oninput="this.setCustomValidity('')"
+            ></textarea>
+            <input
+              type="submit"
+              value="短縮する"
+              class="bg-green-500 text-white p-2 rounded-md w-full mb-4"
+            />
+          </div>
+
+          <div class="flex-grow flex items-center justify-center text-3xl">
+            ⬇️
+          </div>
+
+          <div class="border rounded-md border-gray-300 p-2 flex mt-2">
+            <input
+              type="text"
+              id="shortenedLinkField"
+              class="flex-1"
+              value=""
+              readonly
+            />
+            <button
+              onclick="copyToClipboard()"
+              class="bg-green-500 text-white p-2 rounded-md ml-4"
+            >
+              copy
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <footer class="mt-6 text-center text-gray-600">
+      &copy;All Rights NEVER Reserved.
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
+</html>

@@ -28,7 +28,7 @@ def shorten_amazon_link(url):
         asin = gp_match.group(1)
         return "https://www.amazon.co.jp/dp/"+asin
 
-    # 上記のいずれのパスもマッチしない場合
+    # 上記のいずれもマッチしない場合
     return "amazon.co.jpの商品リンクではありません"
 
 if __name__ == "__main__":

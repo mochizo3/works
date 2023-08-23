@@ -9,9 +9,36 @@ async function copyToClipboard() {
   }
 }
 
+// document.getElementById("product_image").onload = function() {
+//   let imgSrc = document.getElementById("product_image").src;
+//   document.getElementById("downloadLink").href = imgSrc;
+//   document.getElementById("downloadLink").classList.remove("hidden");
+// };
+
 document.getElementById("product_image").onload = function() {
-  document.getElementById("downloadButton").classList.remove("hidden");
+  // 画像のURLをダウンロードリンクのhref属性に設定
+  let imgSrc = document.getElementById("product_image").src;
+  document.getElementById("downloadLink").href = imgSrc;
+  
+  // hiddenクラスを削除してダウンロードボタンを表示
+  document.getElementById("downloadLink").classList.remove("hidden");
+};
+
+function promptForFilename() {
+  // ファイル名をユーザーに入力させる
+  let filename = prompt("ファイル名を入力してください:", "product_image.jpg");
+  
+  if (filename) {
+      // ユーザーが入力したファイル名でダウンロードを実行
+      let downloadLink = document.getElementById("downloadLink");
+      downloadLink.setAttribute("download", filename);
+  } else {
+      // ユーザーがキャンセルしたか、空のファイル名を入力した場合はダウンロードを停止
+      event.preventDefault();
+  }
 }
+
+document.getElementById("downloadLink").addEventListener("click", promptForFilename);
 
 
 document.addEventListener("DOMContentLoaded", function() {

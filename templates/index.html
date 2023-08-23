@@ -70,8 +70,7 @@
               oninput="this.setCustomValidity('')"
               data-first-click="true"  
             >
-            https://www.amazon.co.jp/%E5%81%A5%E5%BA%B7%E3%83%9F%E3%83%8D%E3%83%A9%E3%83%AB%E3%82%80%E3%81%8E%E8%8C%B6-12658-%E4%BC%8A%E8%97%A4%E5%9C%92-280ml%C3%9724%E6%9C%AC/dp/B003LWD3WG/ref=pd_bxgy_img_sccl_2/358-8038013-2560835?pd_rd_w=SGWo8&content-id=amzn1.sym.bc57a5ab-9f02-4944-8c5c-9e1696e0d32c&pf_rd_p=bc57a5ab-9f02-4944-8c5c-9e1696e0d32c&pf_rd_r=E2XQMZE26KMPB1Q7SSQM&pd_rd_wg=3PvNp&pd_rd_r=d243297f-8d27-414f-b1c9-47c836cc1b29&pd_rd_i=B003LWD3WG&th=1
-            </textarea>
+            https://www.amazon.co.jp/%E3%82%A8%E3%83%AC%E3%82%B3%E3%83%A0-%E3%83%AF%E3%82%A4%E3%83%A4%E3%83%AC%E3%82%B9%E3%83%9E%E3%82%A6%E3%82%B9-%E3%83%88%E3%83%A9%E3%83%83%E3%82%AF%E3%83%9C%E3%83%BC%E3%83%AB-6%E3%83%9C%E3%82%BF%E3%83%B3-M-XT3DRBK/dp/B016QCPNUW/?_encoding=UTF8&pd_rd_w=yJLv5&content-id=amzn1.sym.188d4668-4672-4f36-9ad0-64c3725855d9%3Aamzn1.symc.573c83ff-b207-408b-b0c7-3d92bb6b7d04&pf_rd_p=188d4668-4672-4f36-9ad0-64c3725855d9&pf_rd_r=1KVRH1ZF5NHQWRYMX7SE&pd_rd_wg=HPoMG&pd_rd_r=c69cfea9-95b4-428a-9828-14317b6525b4&ref_=pd_gw_ci_mcx_mr_hp_atf_m            </textarea>
             <input
               type="submit"
               value="短縮する"
@@ -120,8 +119,11 @@
           />
         </picture>
         <div class="absolute bottom-3 right-10">
-            <button id="downloadButton" class="hidden bg-gray-100 hover:bg-gray-300 text-xs text-black py-2 px-4 border border-black">画像ダウンロード</button>
+            <!-- <button id="downloadButton" class="hidden bg-gray-100 hover:bg-gray-300 text-xs text-black py-2 px-4 border border-black">画像ダウンロード</button> -->
+            <a id="downloadLink" onclick="promptForFilename()" class="hidden bg-gray-100 hover:bg-gray-300 text-xs text-black py-2 px-4 border border-black">画像ダウンロード</a>
+            <!-- <a id="downloadLink" download="product_image.jpg" class="hidden bg-gray-100 hover:bg-gray-300 text-xs text-black py-2 px-4 border border-black">画像ダウンロード</a> -->
         </div>
+
       </div>
       <!-- 商品情報エリア (右)-->
       <div class="flex-1 flex flex-col justify-between w-full md:w-1/3 md:pl-4">

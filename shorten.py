@@ -14,7 +14,9 @@ import os
 app = Flask(__name__)
 
 # アクセスキーを設定してKeepa APIを初期化
-access_key  = os.environ.get('API_KEY')
+# access_key  = os.environ.get('API_KEY')
+access_key  = '8b62i2uuu64uuipdqfc9psg1nsjc96hta8rq8tgc588rh4illke1l01074p0e0r5'
+
 
 api = keepa.Keepa(access_key)
 

@@ -138,10 +138,10 @@ document.addEventListener("DOMContentLoaded", function() {
                     title: '価格 (円)',
                     tickformat: ',.0f 円' // 追加分
                   },
-                  width: 1000,
-                  height: 400
-                  // autosize: true, // 自動サイズ調整を有効にする
-                  // responsive: true, // レスポンシブデザインを有効にする
+                  // width: 1000,
+                  // height: 400
+                  autosize: true, // 自動サイズ調整を有効にする
+                  responsive: true, // レスポンシブデザインを有効にする
                 };
 
                 priceData[0].line = {

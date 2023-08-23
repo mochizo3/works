@@ -7,15 +7,17 @@ from bs4 import BeautifulSoup
 import requests  
 import io
 import math
+import os
+
 
 
 app = Flask(__name__)
 
 # アクセスキーを設定してKeepa APIを初期化
-access_key = '37da9spj5dk348f7l4nmuf2vgt1v1tsin8vjm3jcb8594jjvst0ui4ii81l0i08r'
+access_key  = os.environ.get('API_KEY')
+
 api = keepa.Keepa(access_key)
 
-# ASIN = 'B08C74XB4Q'
 
 @app.route("/", methods=["GET", "POST"])
 def index():
